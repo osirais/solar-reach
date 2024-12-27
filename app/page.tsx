@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <div
-      className="min-w-screen flex min-h-screen flex-col items-center justify-center gap-16 p-8 pb-20 font-[Cantarell] text-[var(--background)] transition-colors duration-1000 sm:p-20"
+      className="min-w-screen flex min-h-screen flex-col items-center justify-center gap-16 p-8 pb-20 font-[Cantarell] overflow-hidden text-[var(--background)] transition-colors duration-1000 sm:p-20"
       onClick={toggleLight}
       style={{ backgroundColor }}
     >
