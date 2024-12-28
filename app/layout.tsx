@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { Cantarell } from 'next/font/google';
-
-const cantarell = Cantarell({ subsets: ['latin'], weight: '700' });
 
 export const metadata: Metadata = {
   title: "Solar Reach Initiative",
@@ -20,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cantarell.className} `}>
+      <body>
         <Header />
         {children}
         <Footer />
