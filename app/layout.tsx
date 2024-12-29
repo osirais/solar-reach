@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     "At Solar Reach, we're committed to bringing sustainable, solar-powered light to areas where energy resources are scarce.",
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{

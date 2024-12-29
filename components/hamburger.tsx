@@ -1,44 +1,35 @@
 "use client";
+
 import React, { useRef } from "react";
 
-const HoverAnimatedSVG: React.FC = () => {
+export default function Hamburger({
+  width,
+  height,
+}: {
+  width: number;
+  height: number;
+}) {
   const svgRef = useRef<SVGSVGElement>(null);
 
-  const handleMouseEnter = () => {
+  function animate(group: string) {
     const animates = svgRef.current?.querySelectorAll(
-      "animate, animateTransform",
+      `animate[data-group="${group}"], animateTransform[data-group="${group}"]`,
     );
     animates?.forEach((animate) => {
       (animate as SVGAnimateElement).beginElement();
-    //   (animate as SVGAnimateElement).endElementAt(0.001);
     });
-  };
-
-  const handleMouseLeave = () => {
-    const animates = svgRef.current?.querySelectorAll(
-      "animate, animateTransform",
-    );
-    animates?.forEach((animate) => {
-    
-      const values = (animate as SVGAnimateElement).getAttribute('values')?.split(';').reverse().join(';');
-      (animate as SVGAnimateElement).setAttribute('values', values || '');
-      (animate as SVGAnimateElement).beginElement();
-      (animate as SVGAnimateElement).endElementAt(0.3);
-      (animate as SVGAnimateElement).beginElement();
-      (animate as SVGAnimateElement).endElementAt(0.001);
-      setTimeout(() => {
-        (animate as SVGAnimateElement).setAttribute('values', values?.split(';').reverse().join(';') || '');
-      }, 300);
-    });
-  };
+  }
 
   return (
-    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div
+      onMouseEnter={() => animate("forward")}
+      onMouseLeave={() => animate("backward")}
+    >
       <svg
         ref={svgRef}
         xmlns="http://www.w3.org/2000/svg"
-        width="128"
-        height="128"
+        width={width}
+        height={height}
         viewBox="0 0 24 24"
         fill="none"
         stroke="#241f31"
@@ -55,34 +46,70 @@ const HoverAnimatedSVG: React.FC = () => {
             style={{ transformOrigin: "12px 12px" }}
           >
             <animate
+              data-group="forward"
               attributeName="x2"
               values="20;9"
-              begin="indefinite"
-              dur="0.3s"
+              begin="0s"
+              dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              attributeName="x1"
-              values="4;9"
-              begin="indefinite"
-              dur="0.14"
-              fill="freeze"
-              keyTimes="0; 1"
-              calcMode="spline"
-              keySplines="0.16 1 0.3 1"
-            />
-            <animate
-              attributeName="opacity"
-              values="1;0"
-              begin="indefinite"
+              data-group="backward"
+              attributeName="x2"
+              values="9;20"
+              begin="0s"
               dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
-              keySplines="0.16 1 0.3 1"
+              keySplines="0.87 0 0.13 1"
+            />
+            <animate
+              data-group="forward"
+              attributeName="opacity"
+              values="1;0"
+              begin="0s"
+              dur="0.2s"
+              fill="freeze"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.42 0 1 1"
+            />
+            <animate
+              data-group="backward"
+              attributeName="opacity"
+              values="0;1"
+              begin="0s"
+              dur="0.2s"
+              fill="freeze"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0 0 0.58 1"
+            />
+            <animate
+              data-group="forward"
+              attributeName="x1"
+              values="4;9"
+              begin="0s"
+              dur="0.2s"
+              fill="freeze"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.87 0 0.13 1"
+            />
+            <animate
+              data-group="backward"
+              attributeName="x1"
+              values="9;4"
+              begin="0s"
+              dur="0.2s"
+              fill="freeze"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.87 0 0.13 1"
             />
           </line>
           <line
@@ -93,40 +120,66 @@ const HoverAnimatedSVG: React.FC = () => {
             style={{ transformOrigin: "12px 6px" }}
           >
             <animate
+              data-group="forward"
               attributeName="x1"
               values="4;9"
-              begin="indefinite"
-              dur="0.3s"
+              begin="0s"
+              dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
               keySplines="0.87 0 0.13 1"
             />
             <animate
+              data-group="backward"
+              attributeName="x1"
+              values="9;4"
+              begin="0s"
+              dur="0.2s"
+              fill="freeze"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.87 0 0.13 1"
+            />
+            <animate
+              data-group="forward"
               attributeName="y1"
               values="6;12"
-              begin="indefinite"
-              dur="0.3s"
+              begin="0s"
+              dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
               keySplines="0.87 0 0.13 1"
             />
             <animate
+              data-group="backward"
+              attributeName="y1"
+              values="12;6"
+              begin="0s"
+              dur="0.2s"
+              fill="freeze"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.87 0 0.13 1"
+            />
+            <animate
+              data-group="forward"
               attributeName="x2"
               values="20;15"
-              begin="indefinite"
-              dur="0.3s"
+              begin="0s"
+              dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              attributeName="y2"
-              values="6;6"
-              begin="indefinite"
-              dur="0.3s"
+              data-group="backward"
+              attributeName="x2"
+              values="15;20"
+              begin="0s"
+              dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
@@ -141,40 +194,66 @@ const HoverAnimatedSVG: React.FC = () => {
             style={{ transformOrigin: "12px 18px" }}
           >
             <animate
+              data-group="forward"
               attributeName="x1"
               values="4;9"
-              begin="indefinite"
-              dur="0.3s"
+              begin="0s"
+              dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
               keySplines="0.87 0 0.13 1"
             />
             <animate
+              data-group="backward"
+              attributeName="x1"
+              values="9;4"
+              begin="0s"
+              dur="0.2s"
+              fill="freeze"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.87 0 0.13 1"
+            />
+            <animate
+              data-group="forward"
               attributeName="y1"
               values="18;12"
-              begin="indefinite"
-              dur="0.3s"
+              begin="0s"
+              dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
               keySplines="0.87 0 0.13 1"
             />
             <animate
+              data-group="backward"
+              attributeName="y1"
+              values="12;18"
+              begin="0s"
+              dur="0.2s"
+              fill="freeze"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.87 0 0.13 1"
+            />
+            <animate
+              data-group="forward"
               attributeName="x2"
               values="20;15"
-              begin="indefinite"
-              dur="0.3s"
+              begin="0s"
+              dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              attributeName="y2"
-              values="18;18"
-              begin="indefinite"
-              dur="0.3s"
+              data-group="backward"
+              attributeName="x2"
+              values="15;20"
+              begin="0s"
+              dur="0.2s"
               fill="freeze"
               keyTimes="0; 1"
               calcMode="spline"
@@ -182,21 +261,31 @@ const HoverAnimatedSVG: React.FC = () => {
             />
           </line>
           <animateTransform
+            data-group="forward"
             type="rotate"
-            additive="sum"
             attributeName="transform"
             values="0;-90"
-            begin="indefinite"
-            dur="0.3s"
-            fill="freeze"
+            begin="0s"
+            dur="0.2s"
             keyTimes="0; 1"
             calcMode="spline"
             keySplines="0.42 0 0.58 1"
+            fill="freeze"
+          />
+          <animateTransform
+            data-group="backward"
+            type="rotate"
+            attributeName="transform"
+            values="-90;0"
+            begin="0s"
+            dur="0.2s"
+            keyTimes="0; 1"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1"
+            fill="freeze"
           />
         </g>
       </svg>
     </div>
   );
-};
-
-export default HoverAnimatedSVG;
+}

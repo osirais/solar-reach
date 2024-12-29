@@ -1,7 +1,7 @@
 // import Image from "next/image";
 import React from "react";
 
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
     <footer className="mb-20 flex flex-wrap items-center justify-center gap-6">
       {/* <a
@@ -49,6 +49,4 @@ const Footer: React.FC = () => {
       </a> */}
     </footer>
   );
-};
-
-export default Footer;
+}
