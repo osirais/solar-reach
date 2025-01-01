@@ -19,7 +19,7 @@ export default function Header() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="absolute -top-16 left-0 right-0 z-50 mx-auto flex max-w-screen-lg items-center justify-between px-4 sm:top-0">
+    <div className="absolute -top-16 left-0 right-0 z-50 mx-auto flex max-w-screen-lg flex-row items-center justify-between px-4 sm:top-0">
       <Image
         src="/logo_full_dark.svg"
         alt="Solar Reach logo"
@@ -27,7 +27,7 @@ export default function Header() {
         height={250}
       />
       <div
-        className="relative mb-2 cursor-pointer"
+        className="relative mb-2 cursor-pointer mt-28"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

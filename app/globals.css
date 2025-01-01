@@ -2,26 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Regular */
-@font-face {
+/* @font-face {
   font-family: "Cantarell";
   src: url("/fonts/Cantarell-Regular.otf") format("opentype");
   font-weight: 400;
 }
 
-/* Bold */
 @font-face {
   font-family: "Cantarell";
   src: url("/fonts/Cantarell-Bold.otf") format("opentype");
   font-weight: 700;
 }
 
-/* Extrabold */
 @font-face {
   font-family: "Cantarell";
   src: url("/fonts/Cantarell-ExtraBold.otf") format("opentype");
   font-weight: 800;
-}
+} */
+
+font-face {
+  font-family: "Cantarell";
+  src: url("/fonts/Cantarell-VF.otf") format("opentype");
+  /* font-weight: 800; */
+} 
 
 body {
   font-family: Cantarell, Arial, Helvetica, sans-serif;
