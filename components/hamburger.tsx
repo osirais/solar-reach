@@ -22,8 +22,8 @@ export default function Hamburger({
 
   return (
     <div
-      onMouseEnter={() => animate("forward")}
-      onMouseLeave={() => animate("backward")}
+      onMouseEnter={() => animate("to_chevron")}
+      onMouseLeave={() => animate("to_hamburger")}
     >
       <svg
         ref={svgRef}
@@ -46,7 +46,7 @@ export default function Hamburger({
             style={{ transformOrigin: "12px 12px" }}
           >
             <animate
-              data-group="forward"
+              data-group="to_chevron"
               attributeName="x2"
               values="20;9"
               begin="0s"
@@ -57,7 +57,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="backward"
+              data-group="to_hamburger"
               attributeName="x2"
               values="9;20"
               begin="0s"
@@ -68,7 +68,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="forward"
+              data-group="to_chevron"
               attributeName="opacity"
               values="1;0"
               begin="0s"
@@ -79,7 +79,7 @@ export default function Hamburger({
               keySplines="0.42 0 1 1"
             />
             <animate
-              data-group="backward"
+              data-group="to_hamburger"
               attributeName="opacity"
               values="0;1"
               begin="0s"
@@ -90,7 +90,7 @@ export default function Hamburger({
               keySplines="0 0 0.58 1"
             />
             <animate
-              data-group="forward"
+              data-group="to_chevron"
               attributeName="x1"
               values="4;9"
               begin="0s"
@@ -101,7 +101,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="backward"
+              data-group="to_hamburger"
               attributeName="x1"
               values="9;4"
               begin="0s"
@@ -120,7 +120,7 @@ export default function Hamburger({
             style={{ transformOrigin: "12px 6px" }}
           >
             <animate
-              data-group="forward"
+              data-group="to_chevron"
               attributeName="x1"
               values="4;9"
               begin="0s"
@@ -131,7 +131,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="backward"
+              data-group="to_hamburger"
               attributeName="x1"
               values="9;4"
               begin="0s"
@@ -142,7 +142,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="forward"
+              data-group="to_chevron"
               attributeName="y1"
               values="6;12"
               begin="0s"
@@ -153,7 +153,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="backward"
+              data-group="to_hamburger"
               attributeName="y1"
               values="12;6"
               begin="0s"
@@ -164,7 +164,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="forward"
+              data-group="to_chevron"
               attributeName="x2"
               values="20;15"
               begin="0s"
@@ -175,7 +175,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="backward"
+              data-group="to_hamburger"
               attributeName="x2"
               values="15;20"
               begin="0s"
@@ -194,7 +194,7 @@ export default function Hamburger({
             style={{ transformOrigin: "12px 18px" }}
           >
             <animate
-              data-group="forward"
+              data-group="to_chevron"
               attributeName="x1"
               values="4;9"
               begin="0s"
@@ -205,7 +205,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="backward"
+              data-group="to_hamburger"
               attributeName="x1"
               values="9;4"
               begin="0s"
@@ -216,7 +216,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="forward"
+              data-group="to_chevron"
               attributeName="y1"
               values="18;12"
               begin="0s"
@@ -227,7 +227,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="backward"
+              data-group="to_hamburger"
               attributeName="y1"
               values="12;18"
               begin="0s"
@@ -238,7 +238,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="forward"
+              data-group="to_chevron"
               attributeName="x2"
               values="20;15"
               begin="0s"
@@ -249,7 +249,7 @@ export default function Hamburger({
               keySplines="0.87 0 0.13 1"
             />
             <animate
-              data-group="backward"
+              data-group="to_hamburger"
               attributeName="x2"
               values="15;20"
               begin="0s"
@@ -261,7 +261,7 @@ export default function Hamburger({
             />
           </line>
           <animateTransform
-            data-group="forward"
+            data-group="to_chevron"
             type="rotate"
             attributeName="transform"
             values="0;-90"
@@ -273,7 +273,7 @@ export default function Hamburger({
             fill="freeze"
           />
           <animateTransform
-            data-group="backward"
+            data-group="to_hamburger"
             type="rotate"
             attributeName="transform"
             values="-90;0"
