@@ -3,8 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
-import Hamburger from "./hamburger";
-import { FadeText } from "./ui/fade-text";
+import NavIcon from "@/components/nav-icon";
 
 const itemVariants: Variants = {
   open: {
@@ -27,12 +26,17 @@ export default function Header() {
         height={250}
       />
       <div
-        className="relative mb-2 cursor-pointer mt-28"
-        onMouseEnter={() => setIsHovered(true)}
+        className="relative flex flex-col justify-end"
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Hamburger width={54} height={54} />
-        <div className="text-right text-xl font-extrabold uppercase text-[var(--background)]">
+        <div onMouseEnter={() => setIsHovered(true)}>
+          <NavIcon
+            width={54}
+            height={54}
+            isHovered={isHovered}
+          />
+        </div>
+        <div className="absolute right-2 top-12 w-40 text-right text-xl font-extrabold uppercase text-[var(--background)]">
           <motion.nav initial={false} animate={isHovered ? "open" : "closed"}>
             <motion.ul
               variants={{
@@ -56,11 +60,13 @@ export default function Header() {
                 },
               }}
               style={{ pointerEvents: isHovered ? "auto" : "none" }}
+              className="space-y-1"
             >
-              <motion.li variants={itemVariants}>Item 1</motion.li>
-              <motion.li variants={itemVariants}>Item 2</motion.li>
-              <motion.li variants={itemVariants}>Item 3</motion.li>
-              <motion.li variants={itemVariants}>Item 4</motion.li>
+              <motion.li variants={itemVariants}>Home</motion.li>
+              <motion.li variants={itemVariants}>About Us</motion.li>
+              <motion.li variants={itemVariants}>Our Team</motion.li>
+              <motion.li variants={itemVariants}>Get Involved</motion.li>
+              <motion.li variants={itemVariants}>Contact</motion.li>
             </motion.ul>
           </motion.nav>
         </div>
