@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
 import NavIcon from "@/components/nav-icon";
+import Link from "next/link";
 
 const itemVariants: Variants = {
   open: {
@@ -20,10 +21,10 @@ export default function Header() {
   return (
     <div className="absolute -top-16 left-0 right-0 z-50 mx-auto flex max-w-screen-lg flex-row items-center justify-between px-4 sm:top-0">
       <Image
-        src="/logo_full_dark.svg"
-        alt="Solar Reach logo"
-        width={250}
-        height={250}
+      src="/logo_full_dark.svg"
+      alt="Solar Reach logo"
+      width={250}
+      height={250}
       />
       <div
         className="relative flex flex-col justify-end"
@@ -62,11 +63,21 @@ export default function Header() {
               style={{ pointerEvents: isHovered ? "auto" : "none" }}
               className="space-y-1"
             >
-              <motion.li variants={itemVariants}>Home</motion.li>
-              <motion.li variants={itemVariants}>About Us</motion.li>
-              <motion.li variants={itemVariants}>Our Team</motion.li>
-              <motion.li variants={itemVariants}>Get Involved</motion.li>
-              <motion.li variants={itemVariants}>Contact</motion.li>
+                <motion.li variants={itemVariants}>
+                  <Link href="/" className="hover:underline">Home</Link>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                  <Link href="/about" className="hover:underline">About Us</Link>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                  <Link href="/team" className="hover:underline">Our Team</Link>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                  <Link href="/volunteer" className="hover:underline">Get Involved</Link>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                  <Link href="/contact" className="hover:underline">Contact</Link>
+                </motion.li>
             </motion.ul>
           </motion.nav>
         </div>

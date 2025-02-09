@@ -1,61 +1,44 @@
-"use client";
-
-// TODO:
-// priority
-// cursor-pointer
-// Cantarell VF
-// Our Events
-// Group
-// insta gofundme
-import { EmailForm } from "@/components/email-form";
-import Image from "next/image";
 import { useRef, useState } from "react";
 
-export default function Home() {
-  const [isLightOn, setIsLightOn] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState("var(--background)");
-
-  const svgRef = useRef<SVGSVGElement>(null);
-
-  function animate() {
-    if (isLightOn) return;
-    setIsLightOn(true);
-    const animatesBulb = svgRef.current?.querySelectorAll(
-      `animate[data-group="bulb"]`,
-    );
-    const animatesHalo = svgRef.current?.querySelectorAll(
-      `animate[data-group="halo"]`,
-    );
-
-    animatesBulb?.forEach((animate) => {
-      (animate as SVGAnimateElement).beginElement();
-    });
-
-    animatesHalo?.forEach((animate, index) => {
-      setTimeout(
-        () => {
+export default function Bulb({
+  size,
+  setBackgroundColor,
+}: {
+  size: number;
+  setBackgroundColor: Function;
+}) {
+      const [isLightOn, setIsLightOn] = useState(false);
+    
+      const svgRef = useRef<SVGSVGElement>(null);
+    
+      function animate() {
+        if (isLightOn) return;
+        setIsLightOn(true);
+        const animatesBulb = svgRef.current?.querySelectorAll(
+          `animate[data-group="bulb"]`,
+        );
+        const animatesHalo = svgRef.current?.querySelectorAll(
+          `animate[data-group="halo"]`,
+        );
+    
+        animatesBulb?.forEach((animate) => {
           (animate as SVGAnimateElement).beginElement();
-        },
-        (animatesHalo.length - index) * 500,
-      );
-    });
-
-    setTimeout(() => setBackgroundColor("var(--yellow-5)"), 1750);
-  }
-
-  return (
-    <>
-      <div
-        className={`min-w-screen flex min-h-screen flex-col items-center justify-center gap-16 overflow-hidden p-8 pb-20 font-[Cantarell] text-[var(--background)] transition-colors duration-1000 sm:p-20 ${isLightOn ? "" : ""}`}
-        onClick={animate}
-        style={{ backgroundColor }}
-      >
-        {!isLightOn && (
-          <div className="absolute inset-0 z-50 cursor-pointer"></div>
-        )}
-        <div className="min-w-screen -mt-20 flex min-h-screen flex-col items-start justify-center sm:items-start">
-          <div className="relative flex h-full w-full items-center justify-center">
-            <svg
+        });
+    
+        animatesHalo?.forEach((animate, index) => {
+          setTimeout(
+            () => {
+              (animate as SVGAnimateElement).beginElement();
+            },
+            (animatesHalo.length - index) * 500,
+          );
+        });
+    
+        setTimeout(() => setBackgroundColor("var(--yellow-5)"), 1750);
+      }
+    
+    return (
+    <svg
               ref={svgRef}
               width="625px"
               height="625px"
@@ -221,56 +204,5 @@ export default function Home() {
                   keyTimes="0;1"
                 />
               </path>
-            </svg>
-          </div>
-        </div>
-        <div className="-mt-18 flex flex-col items-center gap-8 sm:items-start">
-          <h2 className="mx-auto max-w-screen-md text-center text-3xl font-extrabold text-[var(--background)]">
-            Brightening futures with solar
-          </h2>
-          <p className="mx-auto max-w-screen-md text-center text-xl font-medium text-[var(--background)]">
-            At Solar Reach, we&apos;re committed to bringing sustainable,
-            solar-powered light to areas where energy resources are scarce.
-          </p>
-        </div>
-      </div>
-      <div className="flex w-full justify-center bg-[var(--background)]">
-          <div className="flex w-full max-w-screen-lg flex-col justify-center py-16 sm:flex-row sm:items-start sm:gap-8">
-            <div className="mx-auto max-w-full sm:w-1/2">
-              <EmailForm />
-            </div>
-            <div className="flex flex-col items-center gap-4 sm:w-1/2 sm:items-start">
-              <p className="text-center text-xl font-medium text-white sm:text-left">
-                a
-              </p>
-              {/* <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <a
-          className="flex h-10 items-center justify-center gap-2 rounded-full border border-solid border-transparent bg-foreground px-4 text-sm text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] sm:h-12 sm:px-5 sm:text-base"
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-          >
-          <Image
-            className="dark:invert"
-            src="/vercel.svg"
-            alt="Vercel logomark"
-            width={20}
-            height={20}
-          />
-          Deploy now
-          </a>
-          <a
-          className="flex h-10 items-center justify-center rounded-full border border-solid border-black/[.08] px-4 text-sm transition-colors hover:border-transparent hover:bg-[#f2f2f2] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] sm:h-12 sm:min-w-44 sm:px-5 sm:text-base"
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-          >
-          Read our docs
-          </a>
-        </div> */}
-            </div>
-          </div>
-        </div>
-    </>
-  );
+            </svg>);
 }
