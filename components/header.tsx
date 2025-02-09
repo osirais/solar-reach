@@ -64,19 +64,19 @@ export default function Header() {
               className="space-y-1"
             >
                 <motion.li variants={itemVariants}>
-                  <Link href="/" className="hover:underline">Home</Link>
+                  <Link href="/" className="hover:underline decoration-2">Home</Link>
                 </motion.li>
                 <motion.li variants={itemVariants}>
-                  <Link href="/about" className="hover:underline">About Us</Link>
+                  <Link href="/about" className="hover:underline decoration-2">About Us</Link>
                 </motion.li>
                 <motion.li variants={itemVariants}>
-                  <Link href="/team" className="hover:underline">Our Team</Link>
+                  <Link href="/team" className="hover:underline decoration-2">Our Team</Link>
                 </motion.li>
                 <motion.li variants={itemVariants}>
-                  <Link href="/volunteer" className="hover:underline">Get Involved</Link>
+                  <Link href="/volunteer" className="hover:underline decoration-2">Get Involved</Link>
                 </motion.li>
                 <motion.li variants={itemVariants}>
-                  <Link href="/contact" className="hover:underline">Contact</Link>
+                  <Link href="mailto:solarreachinitiative@gmail.com" className="hover:underline decoration-2">Contact</Link>
                 </motion.li>
             </motion.ul>
           </motion.nav>
