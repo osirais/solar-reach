@@ -70,11 +70,11 @@ export default function Header() {
                   <Link href="/about" className="hover:underline decoration-2">About Us</Link>
                 </motion.li>
                 <motion.li variants={itemVariants}>
-                  <Link href="/team" className="hover:underline decoration-2">Our Team</Link>
+                  <Link href="/donate" className="hover:underline decoration-2">Donate</Link>
                 </motion.li>
-                <motion.li variants={itemVariants}>
+                {/* <motion.li variants={itemVariants}>
                   <Link href="/volunteer" className="hover:underline decoration-2">Get Involved</Link>
-                </motion.li>
+                </motion.li> */}
                 <motion.li variants={itemVariants}>
                   <Link href="mailto:solarreachinitiative@gmail.com" className="hover:underline decoration-2">Contact</Link>
                 </motion.li>
