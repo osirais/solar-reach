@@ -1,10 +1,10 @@
 "use client";
 
+import NavIcon from "@/components/nav-icon";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import React, { useState } from "react";
-import NavIcon from "@/components/nav-icon";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
 const itemVariants: Variants = {
   open: {
@@ -17,25 +17,37 @@ const itemVariants: Variants = {
 
 export default function Header() {
   const [isHovered, setIsHovered] = useState(false);
+  const [logoSize, setLogoSize] = useState(250);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        setLogoSize(150);
+      } else {
+        setLogoSize(250);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div className="absolute -top-16 left-0 right-0 z-50 mx-auto flex max-w-screen-lg flex-row items-center justify-between px-4 sm:top-0">
+    <div className="absolute left-0 right-0 z-50 mx-auto ml-6 flex max-w-screen-lg flex-row items-center justify-between px-4 sm:top-0 sm:ml-auto">
       <Image
-      src="/logo_full_dark.svg"
-      alt="Solar Reach logo"
-      width={250}
-      height={250}
+        src="/logo_full_dark.svg"
+        alt="Solar Reach logo"
+        width={logoSize}
+        height={logoSize}
       />
       <div
-        className="relative flex flex-col justify-end"
+        className="relative mr-6 flex flex-col justify-end sm:mr-0"
         onMouseLeave={() => setIsHovered(false)}
       >
         <div onMouseEnter={() => setIsHovered(true)}>
-          <NavIcon
-            width={54}
-            height={54}
-            isHovered={isHovered}
-          />
+          <NavIcon width={54} height={54} isHovered={isHovered} />
         </div>
         <div className="absolute right-2 top-12 w-40 text-right text-xl font-extrabold uppercase text-[var(--background)]">
           <motion.nav initial={false} animate={isHovered ? "open" : "closed"}>
@@ -63,21 +75,32 @@ export default function Header() {
               style={{ pointerEvents: isHovered ? "auto" : "none" }}
               className="space-y-1"
             >
-                <motion.li variants={itemVariants}>
-                  <Link href="/" className="hover:underline decoration-2">Home</Link>
-                </motion.li>
-                <motion.li variants={itemVariants}>
-                  <Link href="/about" className="hover:underline decoration-2">About Us</Link>
-                </motion.li>
-                <motion.li variants={itemVariants}>
-                  <Link href="/donate" className="hover:underline decoration-2">Donate</Link>
-                </motion.li>
-                {/* <motion.li variants={itemVariants}>
+              <motion.li variants={itemVariants}>
+                <Link href="/" className="decoration-2 hover:underline">
+                  Home
+                </Link>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <Link href="/about" className="decoration-2 hover:underline">
+                  About Us
+                </Link>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <Link href="/donate" className="decoration-2 hover:underline">
+                  Donate
+                </Link>
+              </motion.li>
+              {/* <motion.li variants={itemVariants}>
                   <Link href="/volunteer" className="hover:underline decoration-2">Get Involved</Link>
                 </motion.li> */}
-                <motion.li variants={itemVariants}>
-                  <Link href="mailto:solarreachinitiative@gmail.com" className="hover:underline decoration-2">Contact</Link>
-                </motion.li>
+              <motion.li variants={itemVariants}>
+                <Link
+                  href="mailto:solarreachinitiative@gmail.com"
+                  className="decoration-2 hover:underline"
+                >
+                  Contact
+                </Link>
+              </motion.li>
             </motion.ul>
           </motion.nav>
         </div>

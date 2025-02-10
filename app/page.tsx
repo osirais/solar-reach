@@ -19,7 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     const isMobile = window.matchMedia("(max-width: 640px)").matches;
-    if (isMobile) {
+    if (isMobile || window.location.href.includes("#")) {
       setBackgroundColor("var(--yellow-5)");
     }
   }, []);
@@ -57,10 +57,10 @@ export default function Home() {
         onClick={animate}
         style={{ backgroundColor }}
       >
-        <div className="sm:hidden">
+        <div className="mt-28 sm:hidden">
           <svg
-            height="300px"
-            width="300px"
+            height="325px"
+            width="325px"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
             fill="#000000"
@@ -293,11 +293,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="-mt-18 flex flex-col items-center gap-8 sm:items-start">
-          <h2 className="mx-auto max-w-screen-md text-center text-3xl font-extrabold text-[var(--background)]">
+        <div className="mt-12 flex flex-col items-center gap-8 sm:-mt-[70px] sm:items-start">
+          <h2 className="mx-auto max-w-screen-md text-center text-2xl font-extrabold text-[var(--background)] sm:text-3xl">
             Brightening futures with solar
           </h2>
-          <p className="mx-auto max-w-screen-md text-center text-xl font-medium text-[var(--background)]">
+          <p className="mx-auto max-w-screen-md text-center text-lg font-medium text-[var(--background)] sm:text-xl">
             At Solar Reach, we&apos;re committed to bringing sustainable,
             solar-powered light to areas where energy resources are scarce.
           </p>
