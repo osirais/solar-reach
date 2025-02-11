@@ -1,7 +1,9 @@
 export default function About() {
   return (
-    <div className="mx-auto px-4 flex w-full max-w-screen-lg flex-col pb-24 sm:mt-64 sm:px-20">
-      <h1 className="text-xl mt-32 font-bold uppercase">Our Mission</h1>
+    <div className="mx-auto flex w-full max-w-screen-lg flex-col px-4 pb-24 sm:px-20">
+      <h1 className="mt-32 text-xl font-bold uppercase sm:mt-64">
+        Our Mission
+      </h1>
       <h1 className="mt-2 scroll-m-20 text-4xl font-extrabold tracking-tight">
         Reaching out with solar
       </h1>

@@ -293,7 +293,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center gap-8 sm:-mt-[70px] sm:items-start">
+        <div className="mt-6 flex flex-col items-center gap-8 sm:-mt-[70px] sm:items-start">
           <h2 className="mx-auto max-w-screen-md text-center text-2xl font-extrabold text-[var(--background)] sm:text-3xl">
             Brightening futures with solar
           </h2>
