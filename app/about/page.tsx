@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="mx-auto flex w-full max-w-screen-lg flex-col px-4 pb-24 sm:px-20">
+    <div className="mx-auto flex w-full max-w-screen-lg flex-col px-6 pb-24 sm:px-20">
       <h1 className="mt-28 text-xl font-bold uppercase sm:mt-64">
         Our Mission
       </h1>

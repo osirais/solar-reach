@@ -38,7 +38,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="absolute -top-5 left-0 right-0 z-50 mx-auto ml-0 flex max-w-screen-lg flex-row items-center justify-between px-4 sm:top-0 sm:ml-auto">
+    <div className="absolute -top-5 left-0 right-0 z-50 mx-auto ml-0 flex max-w-screen-lg flex-row items-center justify-between px-6 sm:top-0 sm:ml-auto">
       <Image
         src="/logo_full_dark.svg"
         alt="Solar Reach logo"
