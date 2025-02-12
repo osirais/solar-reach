@@ -8,7 +8,6 @@
 // Group
 // insta gofundme
 import { EmailForm } from "@/components/email-form";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {

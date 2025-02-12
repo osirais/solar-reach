@@ -24,7 +24,7 @@ export default function Header() {
     const handleResize = () => {
       if (window.innerWidth <= 640) {
         setLogoSize(150);
-        setNavSize(45);
+        setNavSize(40);
       } else {
         setLogoSize(250);
         setNavSize(54);
@@ -38,7 +38,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="absolute left-0 right-0 z-50 mx-auto ml-3 flex max-w-screen-lg flex-row items-center justify-between px-4 sm:top-0 sm:ml-auto">
+    <div className="absolute -top-5 left-0 right-0 z-50 mx-auto ml-0 flex max-w-screen-lg flex-row items-center justify-between px-4 sm:top-0 sm:ml-auto">
       <Image
         src="/logo_full_dark.svg"
         alt="Solar Reach logo"
@@ -46,7 +46,7 @@ export default function Header() {
         height={logoSize}
       />
       <div
-        className="relative mr-3 flex flex-col justify-end sm:mr-0"
+        className="relative -top-1 flex flex-col justify-end sm:mr-0"
         onMouseLeave={() => setIsHovered(false)}
       >
         <div onMouseEnter={() => setIsHovered(true)}>
