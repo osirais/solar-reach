@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 
 export const metadata: Metadata = {
-  title: "Solar Reach Initiative",
+  title: "Solar Reach",
   description:
     "At Solar Reach, we're committed to bringing sustainable, solar-powered light to areas where energy resources are scarce.",
 };
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[--yellow-5]">
+      <body className="bg-[--yellow-5] text-[--background]">
         <Header />
         {children}
         <Footer />
