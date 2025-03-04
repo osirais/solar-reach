@@ -97,11 +97,8 @@ export default function Header() {
                   <Link href="/volunteer" className="hover:underline decoration-2">Get Involved</Link>
                 </motion.li> */}
               <motion.li variants={itemVariants}>
-                <Link
-                  href="mailto:solarreachinitiative@gmail.com"
-                  className="decoration-2 hover:underline"
-                >
-                  Contact
+                <Link href="/contact" className="decoration-2 hover:underline">
+                  Donate
                 </Link>
               </motion.li>
             </motion.ul>
