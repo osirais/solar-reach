@@ -98,7 +98,7 @@ export default function Header() {
                 </motion.li> */}
               <motion.li variants={itemVariants}>
                 <Link href="/contact" className="decoration-2 hover:underline">
-                  Donate
+                  Contact
                 </Link>
               </motion.li>
             </motion.ul>
