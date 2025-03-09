@@ -21,8 +21,8 @@ export default function Donate() {
                 </p>
                 <div className="flex flex-col items-center">
                     <Button
-                        onClick={() => window.open("https://www.paypal.com/donate?token=nkmTNWLyuCCkRXJ_Tj-lLuZX9JiNcuna5O5jGwhjo9gdJNhRM6lcFSvY8Mf9NVaCr7jnBFzuA9ensI7x", "_blank")}
-                        className="w-full h-12 px-6 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800"
+                        onClick={() => window.open("https://www.paypal.com/donate/?hosted_button_id=QED7FXY72CW9Q", "_blank")}
+                        className="bg-blue-500 text-white px-6 py-3 rounded-lg border-none cursor-pointer w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg transition-all hover:bg-blue-600"
                     >
                         Donate via PayPal
                     </Button>
