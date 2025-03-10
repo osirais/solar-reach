@@ -11,12 +11,12 @@ export default function Donate() {
                 
                 <p className="mt-6 text-2xl leading-7">
                     
-                    At Solar Reach, we're bringing light and hope to communities without reliable electricity.<br /><br />
+                    At Solar Reach, we&apos;re bringing light and hope to communities without reliable electricity.<br /><br />
                     Your donation directly funds sustainable, solar-powered lights that improve education, safety, and quality of life.<br />
                     With your support, children can study after dark, families can feel safe at night, and entire communities can thrive.<br /><br />
                     <strong>Every dollar counts</strong>, and your generosity powers brighter futures through renewable energy.<br /><br />
                     <strong>Join us today.</strong>
-                    Let's light up lives together and make a lasting global impact.<br />
+                    Let&apos;s light up lives together and make a lasting global impact.<br />
                     Your contribution makes all the difference.<br /><br /><br /><br />
                 </p>
                 <div className="flex flex-col items-center">

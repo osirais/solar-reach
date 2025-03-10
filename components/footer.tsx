@@ -13,7 +13,7 @@ export default function Footer() {
       {
         name: "Instagram",
         href: "https://www.instagram.com/solarreach2024",
-        icon: (props: any) => (
+        icon: (props: React.SVGProps<SVGSVGElement>) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path
               fillRule="evenodd"
@@ -27,8 +27,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full flex flex-wrap items-center justify-center gap-6 bg-[--background]">
-      <div className="w-full mx-auto max-w-7xl px-6 pb-8 pt-8 sm:pt-10 lg:px-8">
+    <footer className="flex w-full flex-wrap items-center justify-center gap-6 bg-[--background]">
+      <div className="mx-auto w-full max-w-7xl px-6 pb-8 pt-8 sm:pt-10 lg:px-8">
         <div>
           <Image
             alt="Solar Reach Initiative"
