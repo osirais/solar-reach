@@ -52,7 +52,7 @@ export default function Header() {
         <div onMouseEnter={() => setIsHovered(true)}>
           <NavIcon width={navSize} height={navSize} isHovered={isHovered} />
         </div>
-        <div className="absolute right-2 top-12 w-40 text-right text-xl font-extrabold uppercase text-[var(--background)]">
+        <div className="absolute right-2 top-12 w-40 text-right text-xl font-extrabold uppercase text-[var(--background)] space-y-px">
           <motion.nav initial={false} animate={isHovered ? "open" : "closed"}>
             <motion.ul
               variants={{
@@ -76,20 +76,20 @@ export default function Header() {
                 },
               }}
               style={{ pointerEvents: isHovered ? "auto" : "none" }}
-              className="space-y-1"
+              className="space-y-px md:space-y-1 lg:space-y-1"
             >
               <motion.li variants={itemVariants}>
-                <Link href="/" className="decoration-2 hover:underline">
+                <Link href="/" className="decoration-2 hover:underline text-sm sm:text-xl md:text-2xl  ">
                   Home
                 </Link>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <Link href="/about" className="decoration-2 hover:underline">
+                <Link href="/about" className="decoration-2 hover:underline text-sm sm:text-xl md:text-2xl  ">
                   About Us
                 </Link>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <Link href="/donate" className="decoration-2 hover:underline">
+                <Link href="/donate" className="decoration-2 hover:underline text-sm sm:text-xl md:text-2xl ">
                   Donate
                 </Link>
               </motion.li>

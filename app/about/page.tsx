@@ -1,6 +1,21 @@
+"use client";
+import { useState, useEffect } from "react";
 import { Separator } from "@/components/ui/separator";
 
 export default function About() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenWidth = () => {
+      setIsSmallScreen(window.innerWidth < 600);
+    };
+
+    checkScreenWidth(); // Run once on mount
+    window.addEventListener("resize", checkScreenWidth); // Update on resize
+
+    return () => window.removeEventListener("resize", checkScreenWidth); // Cleanup
+  }, []);
+
   const people = [
     {
       name: "Aryan Surana",
@@ -27,6 +42,7 @@ export default function About() {
   return (
     <div className="mx-auto flex w-full max-w-screen-lg flex-col px-6 pb-24 sm:px-20">
       <h1 className="mt-28 text-xl font-bold uppercase sm:mt-64">
+        {isSmallScreen && <br />}
         Our Mission
       </h1>
       <h1 className="mt-2 scroll-m-20 text-4xl font-extrabold tracking-tight">
@@ -81,3 +97,4 @@ export default function About() {
     </div>
   );
 }
+

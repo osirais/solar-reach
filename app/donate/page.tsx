@@ -1,15 +1,34 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
+
 export default function Donate() {
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenWidth = () => {
+      setIsSmallScreen(window.innerWidth < 600);
+    };
+
+    checkScreenWidth(); // Run once on mount
+    window.addEventListener("resize", checkScreenWidth); // Update on resize
+
+    return () => window.removeEventListener("resize", checkScreenWidth); // Cleanup
+  }, []);
+
   return (
-    <div className="bg[:-yellow-5] relative">
-      <div className="mx-auto mt-64 flex w-full max-w-screen-lg flex-col px-40 pb-24 pt-16">
-        <h1 className="text-4xl font-bold uppercase">
+    //<div className="bg[:-yellow-5] relative">
+      <div className="mx-auto flex w-full max-w-screen-lg flex-col px-6 pb-24 sm:px-20">
+       
+          
+        <h1 className="mt-28 scroll-m-20 text-4xl font-extrabold tracking-tight sm:mt-64 ">
+          {isSmallScreen && <br />}
           Be a catalyst for change
         </h1>
-
+        
         <p className="mt-6 text-2xl leading-7">
           At Solar Reach, we&apos;re bringing light and hope to communities
           without reliable electricity.
@@ -26,14 +45,14 @@ export default function Donate() {
           brighter futures through renewable energy.
           <br />
           <br />
-          <strong>Join us today.</strong>
+          <strong>Join us today. </strong>
           Let&apos;s light up lives together and make a lasting global impact.
           <br />
-          Your contribution makes all the difference.
+          
           <br />
           <br />
           <br />
-          <br />
+         
         </p>
         <div className="flex flex-col items-center">
           <Button
@@ -49,6 +68,6 @@ export default function Donate() {
           </Button>
         </div>
       </div>
-    </div>
+    //</div>
   );
 }
